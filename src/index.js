@@ -7,7 +7,7 @@ import logoLogger from './utils';
 
 export default class BundleBuddyWebpackPlugin {
   constructor(options) {
-    const pluginOptions = Object.assign({}, options, { sam: true });
+    const pluginOptions = Object.assign({}, options, { sam: false });
     this.sam = pluginOptions.sam;
   }
   apply(compiler) { // eslint-disable-line
