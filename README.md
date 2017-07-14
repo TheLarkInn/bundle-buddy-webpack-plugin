@@ -36,8 +36,12 @@ module.exports = {
 };
 ```
 
-### Options
-Currently there are no options yet!!! However, please feel free to submit an issue or PR!!!!!
+<h2 align="center">Options</h2>
 
-### Bugs
+| Property | Type | Default | Description |
+| --- | --- | --- | --- |
+| warnings | boolean | true | Show/Hide warnings. BundleBuddyWebpackPlugin will emit a warning when you do not have the `devtool` property set in your configuration. And will notify you that it is setting it to "source-map". |
+
+
+## Bugs
 If you believe there is an issue with the plugin itself, by all mean submit an issue!!! However this directly uses [bundle-buddy](https://github.com/samccone/bundle-buddy) and I would also verify that it is not an issue reported there first.

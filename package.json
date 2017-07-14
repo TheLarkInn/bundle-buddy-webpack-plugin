@@ -27,8 +27,9 @@
   },
   "dependencies": {
     "asciify-pixel-matrix": "^1.0.8",
-    "webpack-defaults": "^1.5.0",
-    "bundle-buddy": "^0.1.2"
+    "bundle-buddy": "^0.1.2",
+    "chalk": "^2.0.1",
+    "webpack-defaults": "^1.5.0"
   },
   "main": "dist/cjs.js",
   "files": [
@@ -54,7 +55,6 @@
     "babel-plugin-transform-object-rest-spread": "^6.23.0",
     "babel-polyfill": "^6.23.0",
     "babel-preset-env": "^1.6.0",
-    "chalk": "^2.0.1",
     "cross-env": "^5.0.1",
     "del-cli": "^1.1.0",
     "eslint": "^4.2.0",

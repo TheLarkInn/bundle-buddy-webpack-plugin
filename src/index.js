@@ -3,18 +3,34 @@ import fs from 'fs';
 import { launchServer } from 'bundle-buddy/server';
 import { processSourceMaps } from 'bundle-buddy/process';
 import { formatProcessedSourceMaps, getWritePathForSerializedData } from 'bundle-buddy/utils';
+import chalk from 'chalk';
 import logoLogger from './utils';
+
+const INVALID_SOURCEMAP_WARNING = chalk.yellow(`[BundleBuddyWebpackPlugin] WARNING: config.options.devtool was not set to 'source-map'. Enabling full sourcemaps for bundle-buddy.
+  To hide this warning set {warnings: false} inside the BundleBuddyWebpackPlugin configuration options.
+`);
 
 export default class BundleBuddyWebpackPlugin {
   constructor(options) {
-    const pluginOptions = Object.assign({}, options, { sam: false });
+    const pluginOptions = Object.assign({}, options, { sam: false, warnings: true });
     this.sam = pluginOptions.sam;
+    this.warnings = pluginOptions.warnings;
   }
   apply(compiler) { // eslint-disable-line
-    const getOutDirFor = (compilation) => {
-      const { options } = compilation;
-      const outDir = options.output.path;
+    const getUserConfigOptions = () => compiler.options;
+    const isFullSourceMap = () => getUserConfigOptions().devtool === 'source-map';
 
+    if (!isFullSourceMap()) {
+      if (this.warnings) {
+        console.log(INVALID_SOURCEMAP_WARNING); //eslint-disable-line
+      }
+
+      compiler.options.devtool = 'source-map'; // eslint-disable-line
+    }
+
+    const getOutDirFor = () => {
+      const options = getUserConfigOptions();
+      const outDir = options.output.path;
       return outDir;
     };
 
@@ -49,7 +65,7 @@ export default class BundleBuddyWebpackPlugin {
       dataPath = `data_${Date.now()}`;
       context = path.resolve('./', 'node_modules', 'bundle-buddy');
       const writePath = getWritePathForSerializedData(dataPath, context);
-      // debugger;
+
       ensureDirectoryExistence(writePath);
       fs.writeFileSync(writePath, stringifedData);
       cb();
