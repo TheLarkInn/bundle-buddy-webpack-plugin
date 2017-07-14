@@ -1,4 +1,5 @@
 # bundle-buddy-webpack-plugin
+[![npm](https://badge.fury.io/js/bundle-buddy-webpack-plugin@2x.png)](https://badge.fury.io/js/bundle-buddy-webpack-plugin)
 Your favorite [bundle-buddy](https://github.com/samccone/bundle-buddy) duplication analyzer, made as a webpack plugin.
 
 ## Installation
