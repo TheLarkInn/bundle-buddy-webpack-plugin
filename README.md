@@ -1,6 +1,7 @@
 # bundle-buddy-webpack-plugin
 [![npm](https://badge.fury.io/js/bundle-buddy-webpack-plugin.svg)](https://badge.fury.io/js/bundle-buddy-webpack-plugin)
 [![dependencies](https://david-dm.org/TheLarkInn/bundle-buddy-webpack-plugin.svg)](https://david-dm.org/thelarkinn/bundle-buddy-webpack-plugin)
+<a href="https://medium.com/friendship-dot-js/i-peeked-into-my-node-modules-directory-and-you-wont-believe-what-happened-next-b89f63d21558"><img alt="Business Strategy Status" src="https://img.shields.io/badge/business%20model-flavortown-green.svg"></a>
 
 Your favorite [bundle-buddy](https://github.com/samccone/bundle-buddy) duplication analyzer, made as a webpack plugin.
 
