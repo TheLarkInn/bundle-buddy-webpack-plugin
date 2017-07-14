@@ -32,7 +32,8 @@
   },
   "main": "dist/cjs.js",
   "files": [
-    "dist"
+    "dist",
+    "assets"
   ],
   "engines": {
     "node": ">= 4.3 < 5.0.0 || >= 5.10"
