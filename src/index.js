@@ -12,7 +12,7 @@ const INVALID_SOURCEMAP_WARNING = chalk.yellow(`[BundleBuddyWebpackPlugin] WARNI
 
 export default class BundleBuddyWebpackPlugin {
   constructor(options) {
-    const pluginOptions = Object.assign({}, options, { sam: false, warnings: true });
+    const pluginOptions = Object.assign({ sam: false, warnings: true }, options);
     this.sam = pluginOptions.sam;
     this.warnings = pluginOptions.warnings;
   }
