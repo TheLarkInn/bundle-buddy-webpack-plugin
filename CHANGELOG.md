@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="0.3.0"></a>
+# [0.3.0](https://github.com/TheLarkInn/bundle-buddy-webpack-plugin/compare/v0.2.1...v0.3.0) (2017-07-25)
+
+
+### Features
+
+* **uglify:** add ability for uglifyjs to be caught and options validated to ensure sourcemaps are generated ([acfed98](https://github.com/TheLarkInn/bundle-buddy-webpack-plugin/commit/acfed98))
+
+
+
 <a name="0.2.1"></a>
 ## [0.2.1](https://github.com/TheLarkInn/bundle-buddy-webpack-plugin/compare/v0.2.0...v0.2.1) (2017-07-14)
 
