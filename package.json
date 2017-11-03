@@ -28,8 +28,7 @@
   "dependencies": {
     "asciify-pixel-matrix": "^1.0.8",
     "bundle-buddy": "^0.1.2",
-    "chalk": "^2.0.1",
-    "webpack-defaults": "^1.5.0"
+    "chalk": "^2.0.1"
   },
   "main": "dist/cjs.js",
   "files": [
@@ -66,6 +65,7 @@
     "nsp": "^2.6.3",
     "pre-commit": "^1.2.2",
     "standard-version": "^4.2.0",
-    "webpack": "^3.2.0"
+    "webpack": "^3.2.0",
+    "webpack-defaults": "^1.6.0"
   }
 }
