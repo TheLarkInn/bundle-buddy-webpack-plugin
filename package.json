@@ -27,7 +27,7 @@
   },
   "dependencies": {
     "asciify-pixel-matrix": "^1.0.8",
-    "bundle-buddy": "^0.1.2",
+    "bundle-buddy": "^0.2.1",
     "chalk": "^2.0.1"
   },
   "main": "dist/cjs.js",
