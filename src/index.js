@@ -76,7 +76,9 @@ export default class BundleBuddyWebpackPlugin {
     let dataPath;
     let context;
 
-    compiler.plugin('after-emit', (compilation, cb) => {
+    const hookAfterEmit = compiler.hooks ? cb => compiler.hooks.afterEmit.tapAsync('BundleBuddyWebpackPlugin', cb) : cb => compiler.plugin('after-emit', cb);
+
+    hookAfterEmit((compilation, cb) => {
       const maps = getSourceMapNamesFrom(compilation);
       const processed = processSourceMaps(maps);
       stringifedData = formatProcessedSourceMaps(processed);
@@ -89,7 +91,9 @@ export default class BundleBuddyWebpackPlugin {
       cb();
     });
 
-    compiler.plugin('done', () => {
+    const hookDone = compiler.hooks ? cb => compiler.hooks.done.tap('BundleBuddyWebpackServer', cb) : cb => compiler.plugin('done', cb);
+
+    hookDone(() => {
       if (this.sam) {
         process.nextTick(() => {
           logoLogger();
