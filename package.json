@@ -7,7 +7,6 @@
     "url": "github.com/thelarkinn"
   },
   "scripts": {
-    "webpack-defaults": "webpack-defaults",
     "start": "npm run build -- -w",
     "appveyor:test": "npm run test",
     "build": "cross-env NODE_ENV=production babel src -d dist --ignore 'src/**/*.test.js'",
@@ -23,7 +22,8 @@
     "test:coverage": "jest --collectCoverageFrom='src/**/*.js' --coverage",
     "travis:lint": "npm run lint && npm run security",
     "travis:test": "npm run test -- --runInBand",
-    "travis:coverage": "npm run test:coverage -- --runInBand"
+    "travis:coverage": "npm run test:coverage -- --runInBand",
+    "defaults": "webpack-defaults"
   },
   "dependencies": {
     "asciify-pixel-matrix": "^1.0.8",
@@ -39,7 +39,7 @@
     "node": ">= 4.3 < 5.0.0 || >= 5.10"
   },
   "peerDependencies": {
-    "webpack": "^2.0.0 || ^3.0.0"
+    "webpack": "^2.0.0 || ^3.0.0 || ^4.0.0"
   },
   "pre-commit": "lint-staged",
   "lint-staged": {
@@ -49,6 +49,7 @@
     ]
   },
   "devDependencies": {
+    "@webpack-contrib/defaults": "^2.5.0",
     "babel-cli": "^6.24.1",
     "babel-jest": "^20.0.3",
     "babel-plugin-transform-object-rest-spread": "^6.23.0",
@@ -65,7 +66,6 @@
     "nsp": "^2.6.3",
     "pre-commit": "^1.2.2",
     "standard-version": "^4.2.0",
-    "webpack": "^3.2.0",
-    "webpack-defaults": "^1.6.0"
+    "webpack": "^4.15.0"
   }
 }
