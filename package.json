@@ -6,6 +6,10 @@
     "email": "sean.larkin1@gmail.com",
     "url": "github.com/thelarkinn"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/TheLarkInn/bundle-buddy-webpack-plugin.git"
+  },
   "scripts": {
     "webpack-defaults": "webpack-defaults",
     "start": "npm run build -- -w",
